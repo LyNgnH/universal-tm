@@ -2,13 +2,286 @@
 	<type>turing</type>
 	<automaton>
 		<!--The list of states.-->
-		<block id="0" name="q0">
-			<tag>Machine0</tag>
-			<x>178.0</x>
-			<y>196.0</y>
+		<block id="1" name="find_trans">
+			<tag>Machine1</tag>
+			<x>546.0</x>
+			<y>689.0</y>
+		</block>
+		<block id="2" name="find_input">
+			<tag>Machine2</tag>
+			<x>958.0</x>
+			<y>638.0</y>
+		</block>
+		<block id="3" name="final">
+			<tag>Machine3</tag>
+			<x>1361.0</x>
+			<y>603.0</y>
+		</block>
+		<block id="4" name="write_tape">
+			<tag>Machine4</tag>
+			<x>523.0</x>
+			<y>131.0</y>
+		</block>
+		<block id="5" name="accept">
+			<tag>Machine5</tag>
+			<x>1508.0</x>
+			<y>783.0</y>
+			<final/>
+		</block>
+		<block id="6" name="shift">
+			<tag>Machine6</tag>
+			<x>810.0</x>
+			<y>84.0</y>
+		</block>
+		<block id="7" name="write_state">
+			<tag>Machine7</tag>
+			<x>966.0</x>
+			<y>330.0</y>
+		</block>
+		<block id="8" name="reject">
+			<tag>Machine8</tag>
+			<x>1794.0</x>
+			<y>609.0</y>
+			<final/>
+		</block>
+		<block id="9" name="move_header">
+			<tag>Machine9</tag>
+			<x>434.0</x>
+			<y>404.0</y>
+		</block>
+		<block id="10" name="init">
+			<tag>init.jff</tag>
+			<x>138.0</x>
+			<y>717.0</y>
 			<initial/>
 		</block>
+		<!--The list of transitions.-->
+		<transition block="true">
+			<from>3</from>
+			<to>8</to>
+			<read>R</read>
+		</transition>
+		<transition block="true">
+			<from>9</from>
+			<to>1</to>
+			<read/>
+		</transition>
+		<transition block="true">
+			<from>2</from>
+			<to>3</to>
+			<read>F</read>
+		</transition>
+		<transition block="true">
+			<from>3</from>
+			<to>5</to>
+			<read>A</read>
+		</transition>
+		<transition block="true">
+			<from>2</from>
+			<to>7</to>
+			<read>D</read>
+		</transition>
+		<transition block="true">
+			<from>4</from>
+			<to>9</to>
+			<read/>
+		</transition>
+		<transition block="true">
+			<from>1</from>
+			<to>2</to>
+			<read/>
+		</transition>
+		<transition block="true">
+			<from>10</from>
+			<to>1</to>
+			<read/>
+		</transition>
+		<transition block="true">
+			<from>7</from>
+			<to>6</to>
+			<read/>
+		</transition>
+		<transition block="true">
+			<from>6</from>
+			<to>4</to>
+			<read/>
+		</transition>
 		<!--The list of automata-->
-		<Machine0/>
+		<Machine8/>
+		<Machine7/>
+		<init.jff>
+			<!--The list of states.-->
+			<block id="0" name="q0">
+				<tag>Machine0</tag>
+				<x>770.0</x>
+				<y>191.0</y>
+			</block>
+			<block id="1" name="q1">
+				<tag>Machine1</tag>
+				<x>172.0</x>
+				<y>191.0</y>
+				<initial/>
+			</block>
+			<block id="2" name="q2">
+				<tag>Machine2</tag>
+				<x>459.0</x>
+				<y>191.0</y>
+			</block>
+			<block id="3" name="q3">
+				<tag>Machine3</tag>
+				<x>1062.0</x>
+				<y>191.0</y>
+				<final/>
+			</block>
+			<!--The list of transitions.-->
+			<transition>
+				<from>0</from>
+				<to>3</to>
+				<read/>
+				<write>h</write>
+				<move>S</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>!□</read>
+				<write>~</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>2</to>
+				<read/>
+				<write>C</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>0</to>
+				<read>!□</read>
+				<write>~</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>0</to>
+				<read/>
+				<write>1</write>
+				<move>L</move>
+			</transition>
+			<!--The list of automata-->
+			<Machine0/>
+			<Machine2/>
+			<Machine1/>
+			<Machine3/>
+			<note>
+				<text>go right until 
+input is blank</text>
+				<x>123.0</x>
+				<y>85.0</y>
+			</note>
+			<note>
+				<text>if it is blank,
+write C</text>
+				<x>292.0</x>
+				<y>206.0</y>
+			</note>
+			<note>
+				<text>record the 
+first state
+which is 1</text>
+				<x>585.0</x>
+				<y>203.0</y>
+			</note>
+			<note>
+				<text>mark "h"
+before the 
+first input
+to indicate
+current header
+position</text>
+				<x>891.0</x>
+				<y>198.0</y>
+			</note>
+			<note>
+				<text>go all the
+way back 
+to the first
+input character</text>
+				<x>729.0</x>
+				<y>63.0</y>
+			</note>
+		</init.jff>
+		<Machine9/>
+		<Machine2/>
+		<Machine1/>
+		<Machine4/>
+		<Machine3/>
+		<Machine6/>
+		<Machine5/>
+		<note>
+			<text>mark first state
++ header</text>
+			<x>89.0</x>
+			<y>751.0</y>
+		</note>
+		<note>
+			<text>find current state's
+transitions</text>
+			<x>499.0</x>
+			<y>715.0</y>
+		</note>
+		<note>
+			<text>find the correct
+transition by
+comparing input
+with condition</text>
+			<x>906.0</x>
+			<y>669.0</y>
+		</note>
+		<note>
+			<text>update
+state</text>
+			<x>1018.0</x>
+			<y>315.0</y>
+		</note>
+		<note>
+			<text>shift the input
+if necessary</text>
+			<x>845.0</x>
+			<y>65.0</y>
+		</note>
+		<note>
+			<text>write to the input
+tape of the simulated
+machine</text>
+			<x>444.0</x>
+			<y>61.0</y>
+		</note>
+		<note>
+			<text>move current header</text>
+			<x>495.0</x>
+			<y>394.0</y>
+		</note>
+		<note>
+			<text>halt if no transition
+is found. Compare 
+current state with 
+final</text>
+			<x>1304.0</x>
+			<y>519.0</y>
+		</note>
+		<note>
+			<text>if current == final
+accept</text>
+			<x>1345.0</x>
+			<y>750.0</y>
+		</note>
+		<note>
+			<text>if current != final
+reject</text>
+			<x>1739.0</x>
+			<y>543.0</y>
+		</note>
 	</automaton>
 </structure>
