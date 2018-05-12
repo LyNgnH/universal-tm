@@ -1,4 +1,4 @@
 The following inputs seem to generate infinite loops somewhere inside the main loop:
 D1011010111011D1011101011101D10101101011F11 (no input)
-110111 (no transitions, no final state)
+110111F (no transitions, no final state)
 F1 (no transitions, no input, initial state is final)
