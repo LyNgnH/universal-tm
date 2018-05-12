@@ -54,11 +54,11 @@
 			<move>L</move>
 		</transition>
 		<transition>
-			<from>2</from>
-			<to>3</to>
-			<read>D</read>
-			<write>D</write>
-			<move>R</move>
+			<from>1</from>
+			<to>2</to>
+			<read/>
+			<write/>
+			<move>S</move>
 		</transition>
 		<transition>
 			<from>1</from>
@@ -97,13 +97,6 @@
 		</transition>
 		<transition>
 			<from>1</from>
-			<to>2</to>
-			<read/>
-			<write/>
-			<move>S</move>
-		</transition>
-		<transition>
-			<from>1</from>
 			<to>1</to>
 			<read>w</read>
 			<write>1</write>
@@ -115,6 +108,13 @@
 			<read>!D</read>
 			<write>~</write>
 			<move>R</move>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>3</to>
+			<read>D</read>
+			<write>D</write>
+			<move>S</move>
 		</transition>
 		<transition>
 			<from>0</from>
