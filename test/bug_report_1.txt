@@ -2,3 +2,5 @@ The following inputs seem to generate infinite loops somewhere inside the main l
 D1011010111011D1011101011101D10101101011F11 (no input)
 110111F (no transitions, no final state)
 F1 (no transitions, no input, initial state is final)
+
+[[fixed]]
