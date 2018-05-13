@@ -1,0 +1,25 @@
+This machine was made to test more than 2 final states. The machine has alphabet a b c d, 
+and has 3 accepting final states, with 1 rejecting final state.
+a, b, d are accepted, while any other input (c, ad, bb) are rejected. 
+
+delta function:
+d(q0, a) = (q1, a, R)
+d(q0, b) = (q2, a, R)
+d(q0, c) = (q3, c, R)
+d(q0, d) = (q4, a, R)
+
+final states: (q1, q2, q4)
+
+When a is inputted, it behaves as expected:
+11D1011011011011D101110111011011D1011110111101111011D1011111011111011011F110111011111
+
+The following inputs (b, d) go into an infinite loop when they should accept:
+111D1011011011011D101110111011011D1011110111101111011D1011111011111011011F110111011111
+11111D1011011011011D101110111011011D1011110111101111011D1011111011111011011F110111011111
+
+The following inputs (c, bb) go into an infinite loop when they should reject:
+1111D1011011011011D101110111011011D1011110111101111011D1011111011111011011F110111011111
+1110111D1011011011011D101110111011011D1011110111101111011D1011111011111011011F110111011111
+
+The following input (ad) accepts when it should reject
+11011111D1011011011011D101110111011011D1011110111101111011D1011111011111011011F110111011111
